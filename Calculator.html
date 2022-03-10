@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	 <meta charset="utf-8">
+ 	<title> Simple Calculator</title>
+ 	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<center><br><br><br><br><br>
+	<table class = "calculator" >
+		 
+		 <tr>
+		 <td colspan = "3"> <input class = "display-box" type = "text" id = "result" disabled /> </td>
+		 <td> <input class = "button" type = "button" value = "C" onclick = "clearScreen()" style = "background-color: #fb0066;"/> </td>
+		 </tr>
+		 
+		 <tr>
+		 <td> <input class = "button" type = "button" value = "1" onclick = "disp('1')" /> </td>
+		 <td> <input class = "button" type = "button" value = "2" onclick = "disp('2')" /> </td>
+		 <td> <input class = "button" type = "button" value = "3" onclick = "disp('3')" /> </td>
+		 <td> <input class = "button" type = "button" value = "/" onclick = "disp('/')" /> </td>
+		 </tr>
+		 
+		 <tr>
+		 <td> <input class = "button" type = "button" value = "4" onclick = "disp('4')" /> </td>
+		 <td> <input class = "button" type = "button" value = "5" onclick = "disp('5')" /> </td>
+		 <td> <input class = "button" type = "button" value = "6" onclick = "disp('6')" /> </td>
+		 <td> <input class = "button" type = "button" value = "-" onclick = "disp('-')" /> </td>
+		 </tr>
+		 
+		 <tr>
+		 <td> <input class = "button" type = "button" value = "7" onclick = "disp('7')" /> </td>
+		 <td> <input class = "button" type = "button" value = "8" onclick = "disp('8')" /> </td>
+		 <td> <input class = "button" type = "button" value = "9" onclick = "disp('9')" /> </td>
+		 <td> <input class = "button" type = "button" value = "+" onclick = "disp('+')" /> </td>
+		 </tr>
+		 
+		 <tr>
+		 <td> <input class = "button" type = "button" value = "." onclick = "disp('.')" /> </td>
+		 <td> <input class = "button" type = "button" value = "0" onclick = "disp('0')" /> </td>
+		 <td> <input class = "button" type = "button" value = "=" onclick = "calculate()" style = "background-color: #fb0066;"/></td>
+		 <td> <input class = "button" type = "button" value = "*" onclick = "disp('*')" /> </td>
+		 </tr>
+
+	</table>
+	</center>
+</body>
+
+
+<style type="text/css">
+.calculator {
+	 padding: 10px;
+	 border-radius: 1em;
+	 height: 450px;
+	 width: 440px;
+	 margin: auto;
+	 background-color: #191b28;
+	 box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.display-box {
+	 font-family: 'Arial';
+	 background-color: #dcdbe1;
+	 border: solid black 0.9px;
+	 color: black;
+	 border-radius: 5px;
+	 width: 90%;
+	 height: 70%;
+}
+.button {
+	 font-family: 'Arial';
+	 background-color: #64278f;
+	 color: white;
+	 border: solid black 0.5px;
+	 width: 80%;
+	 border-radius: 5px;
+	 height: 70%;
+	 outline: none;
+}
+</style>
+
+
+<script type="text/javascript">	
+function clearScreen() {
+ document.getElementById("result").value = "";
+}
+
+
+function disp(value) {
+ document.getElementById("result").value += value;
+}
+
+
+function calculate() {
+ var p = document.getElementById("result").value;
+ var q = eval(p);
+ document.getElementById("result").value = q;
+}
+</script>
+</html>
